@@ -28,10 +28,15 @@ class Cycliste(
 
     override fun toString(): String {
             val list= StringBuilder()
-            for ((k, v) in listEtape) {
-                list.append("Etape: ${k.nom}, dateDebut: ${k.dateDebut}, dateFin: ${k.dateFin}, distanceParcourire: ${k.distanceParcourire}, difficult: ${k.difficult}\n")
-                list.append("Result: ${v}\n")
-            }
+//            for ((k, v) in listEtape) {
+//                list.append("Etape: ${k.nom}, dateDebut: ${k.dateDebut}, dateFin: ${k.dateFin}, distanceParcourire: ${k.distanceParcourire}, difficult: ${k.difficult}\n")
+//                list.append("Result: ${v}\n")
+//            }
+
+        listEtape.forEach(){ e->
+            list.append("Etape: ${e.key.nom}, dateDebut: ${e.key.dateDebut}, dateFin: ${e.key.dateFin}, distanceParcourire: ${e.key.distanceParcourire}, difficult: ${e.key.difficult}\n")
+                list.append("Result: ${e.value}\n")
+        }
         return "nom: $nom, prenom: $prenom, nationalite: $nationalite, age: $age, list des etapes: $list"
     }
 
